@@ -1,0 +1,103 @@
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git
+$ git init
+Initialized empty Git repository in C:/Users/pardkuma/OneDrive - Adobe/Desktop/Branching_Git/.git/
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ ls -la
+total 8
+drwxr-xr-x 1 ADOBENET+pardkuma 4096 0 Jul 28 16:24 ./
+drwxr-xr-x 1 ADOBENET+pardkuma 4096 0 Jul 28 16:24 ../
+drwxr-xr-x 1 ADOBENET+pardkuma 4096 0 Jul 28 16:24 .git/
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test1.txt
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git add .
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git commmit -m 'branch'
+git: 'commmit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git commit -m 'branch'
+[master (root-commit) 6388d19] branch
+ 2 files changed, 2 insertions(+)
+ create mode 100644 test1.txt
+ create mode 100644 test2.txt
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git log
+commit 6388d19943e5e5170e5d9fae56f74a26aa0e6fcf (HEAD -> master)
+Author: Pardeep Kumar <parkmr027@gmail.com>
+Date:   Wed Jul 28 16:27:16 2021 +0530
+
+    branch
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git remote add origin git@github.com:parkmr027/branching-git.git
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 308 bytes | 308.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:parkmr027/branching-git.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch
+* master
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch login-system
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch
+  login-system
+* master
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git checkout login-system
+Switched to branch 'login-system'
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git branch
+* login-system
+  master
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$
