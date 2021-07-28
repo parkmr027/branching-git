@@ -1,3 +1,9 @@
+Git Branching : 
+ 
+Create 2 test folder and then enter some content :
+Small story to learn Branching is : let suppose we have 2 folder and our manager ask to do some changes and we have fear someting not went wrong.
+So in this case we can simply create branch.
+
 ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git
 $ git status
 fatal: not a git repository (or any of the parent directories): .git
@@ -41,12 +47,7 @@ fatal: your current branch 'master' does not have any commits yet
 ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
 $ git add .
 
-ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
-$ git commmit -m 'branch'
-git: 'commmit' is not a git command. See 'git --help'.
 
-The most similar command is
-        commit
 
 ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
 $ git commit -m 'branch'
@@ -78,6 +79,11 @@ To github.com:parkmr027/branching-git.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
+
+
+---------- here one new repository branching-git from git hub and also create one branch from bash that is login-system -----
+
+
 ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
 $ git branch
 * master
@@ -100,4 +106,114 @@ $ git branch
   master
 
 ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git status
+On branch login-system
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test1.txt
+        modified:   test2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git_branch_history.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git add .
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git commit -m "login sysyem"
+[login-system bbd7d5a] login sysyem
+ 3 files changed, 105 insertions(+), 2 deletions(-)
+ create mode 100644 Git_branch_history.txt
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git push -u origin login-system
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 1.33 KiB | 1.33 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'login-system' on GitHub by visiting:
+remote:      https://github.com/parkmr027/branching-git/pull/new/login-system
+remote:
+To github.com:parkmr027/branching-git.git
+ * [new branch]      login-system -> login-system
+Branch 'login-system' set up to track remote branch 'login-system' from 'origin'.
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git push origin login-system
+Everything up-to-date
+
+------------------------ below we can enter into master as well once we are done with login system and merge the same with login-system -----------
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (login-system)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git merge login-system
+Updating 6388d19..bbd7d5a
+Fast-forward
+ Git_branch_history.txt | 103 +++++++++++++++++++++++++++++++++++++++++++++++++
+ test1.txt              |   2 +-
+ test2.txt              |   2 +-
+ 3 files changed, 105 insertions(+), 2 deletions(-)
+ create mode 100644 Git_branch_history.txt
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git push -u origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:parkmr027/branching-git.git
+   6388d19..bbd7d5a  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch
+  login-system
+* master
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch
+  login-system
+* master
+
+********** below we can delete the branch once we are done with changes -------------
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch -d login-system
+Deleted branch login-system (was bbd7d5a).
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git branch
+* master
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
+$ git push origin --delete login-system
+To github.com:parkmr027/branching-git.git
+ - [deleted]         login-system
+
+ADOBENET+pardkuma@AP-PC1SLWME MINGW64 ~/OneDrive - Adobe/Desktop/Branching_Git (master)
 $
